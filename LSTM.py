@@ -17,11 +17,9 @@ def lstm_headline(sentence):
     sentiment = loaded_model.predict(sentence, batch_size=1, verbose=2)[0]
 
     if np.argmax(sentiment) == 0:
-        print("Non-sarcastic")
-        return 'Non-Sarcastic'
+        return 'Non-Sarcastic', sentiment
     elif np.argmax(sentiment) == 1:
-        print("Sarcasm")
-        return 'Sarcastic'
+        return 'Sarcastic', sentiment
 
 
 def lstm_tweets(sentence):
@@ -33,8 +31,6 @@ def lstm_tweets(sentence):
     sentiment = loaded_model.predict(sentence, batch_size=1, verbose=2)[0]
 
     if np.argmax(sentiment) == 0:
-        print("Non-sarcastic")
-        return 'Non-Sarcastic'
+        return 'Non-Sarcastic', sentiment
     elif np.argmax(sentiment) == 1:
-        print("Sarcasm")
-        return 'Sarcastic'
+        return 'Sarcastic', sentiment

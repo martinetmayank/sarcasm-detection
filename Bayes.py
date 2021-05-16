@@ -23,6 +23,6 @@ def bayes(headline):
     labels_pred = bnb.predict(test)
     print(type(labels_pred))
     if labels_pred[0] == "1":
-        return "Sarcasm"
+        return "Sarcasm", labels_pred[0]
     else:
-        return "no Sarcasm"
+        return "no Sarcasm", labels_pred[0]
