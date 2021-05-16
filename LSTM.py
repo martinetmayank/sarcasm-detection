@@ -8,8 +8,7 @@ max_features = 2000
 tokenizer = Tokenizer(num_words=max_features, split=' ')
 
 
-def headline(sentence):
-
+def lstm_headline(sentence):
     sentence = tokenizer.texts_to_sequences(sentence)
     sentence = pad_sequences(sentence, maxlen=29, dtype='int32', value=0)
 
@@ -25,10 +24,7 @@ def headline(sentence):
         return 'Sarcastic'
 
 
-def tweets(sentence):
-    # max_features = 2000
-    # tokenizer = Tokenizer(num_words=max_features, split=' ')
-
+def lstm_tweets(sentence):
     sentence = tokenizer.texts_to_sequences(sentence)
     sentence = pad_sequences(sentence, maxlen=29, dtype='int32', value=0)
 
