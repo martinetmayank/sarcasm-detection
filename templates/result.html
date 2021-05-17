@@ -1,2 +1,15 @@
 <h1>Result</h1>
-{{result}}
+{{result}}<br><br>
+<table>
+    <th>Model</th>
+    <th>Output</th>
+    <th>Remarks</th>
+
+    {% for key in result %}
+    <tr>
+        <td> {{key}} </td>
+        <td> {{result[key][0]}} </td>
+        <td> {{result[key][1]}} </td>
+    </tr>
+    {% endfor %}
+</table>

@@ -21,7 +21,6 @@ def bayes(headline):
     test = tf.transform(review).toarray()
 
     labels_pred = bnb.predict(test)
-    print(type(labels_pred))
     if labels_pred[0] == "1":
         return "Sarcasm", labels_pred[0]
     else:

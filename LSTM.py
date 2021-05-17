@@ -2,7 +2,7 @@ import keras
 import numpy as np
 from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
-
+import os
 
 max_features = 2000
 tokenizer = Tokenizer(num_words=max_features, split=' ')
@@ -15,7 +15,8 @@ def lstm_headline(sentence):
     loaded_model = keras.models.load_model("models/lstm-headline")
 
     sentiment = loaded_model.predict(sentence, batch_size=1, verbose=2)[0]
-
+    print(sentiment)
+    os.system('cls')
     if np.argmax(sentiment) == 0:
         return 'Non-Sarcastic', sentiment
     elif np.argmax(sentiment) == 1:
@@ -29,7 +30,7 @@ def lstm_tweets(sentence):
     loaded_model = keras.models.load_model("models/lstm-tweets")
 
     sentiment = loaded_model.predict(sentence, batch_size=1, verbose=2)[0]
-
+    os.system('cls')
     if np.argmax(sentiment) == 0:
         return 'Non-Sarcastic', sentiment
     elif np.argmax(sentiment) == 1:

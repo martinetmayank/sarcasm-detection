@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template
 
-from utils import get_result, clear
+from utils import get_result
 
 app = Flask(__name__)
 
@@ -19,5 +19,4 @@ def result():
 
 
 if __name__ == '__main__':
-    app.run('localhost', port=3000, debug=True)
-    clear()
+    app.run(debug=True)

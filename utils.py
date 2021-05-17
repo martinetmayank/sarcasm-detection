@@ -7,14 +7,10 @@ import os
 def get_result(sentence):
     l1 = lstm_tweets(sentence)
     l2 = lstm_headline(sentence)
-    b = bayes(sentence[0])
+    b = bayes(sentence)
 
     return {
         'twitter LSTM': l1,
         'headline LSTM': l2,
         'Naive bayes': b
     }
-
-
-def clear():
-    os.system('cls')
